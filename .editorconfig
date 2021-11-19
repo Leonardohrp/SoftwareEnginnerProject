@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS1573: O parâmetro não tem nenhuma tag param correspondente no comentário XML (mas outros parâmetros têm)
+dotnet_diagnostic.CS1573.severity = silent

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API_LES</name>
+    </assembly>
+    <members>
+        <member name="T:API_LES.Controllers.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:API_LES.Controllers.UserController.GetUserById(System.Int32)">
+            <summary>
+            Traz um usuário pelo Id.
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna usuário cadastrado pelo Id</returns>
+        </member>
+        <member name="M:API_LES.Controllers.UserController.CreateUser(API_LES.Models.User.CreateUser)">
+            <summary>
+            Cria um usuário.
+            </summary>
+            <returns>Retorna um boolean para a criação do usuário, true = sucesso || false = falha</returns>
+        </member>
+        <member name="M:API_LES.Controllers.UserController.UpdateUserById(API_LES.Models.User.UpdateUser,System.Int32)">
+            <summary>
+            Faz o update do usuário pelo Id.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
