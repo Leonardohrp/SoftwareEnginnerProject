@@ -1,10 +1,7 @@
 # LES Project
 Project Description
 
-### Column Name
-- [ ] Create a BeneficioService
-- [ ] Create a BeneficioRepository
-- [ ] Create a BeneficioController
+### ToDo
 - [ ] Create a CargoService
 - [ ] Create a CargoRepository
 - [ ] Create a CargoController
@@ -17,3 +14,6 @@ Project Description
 - [✓] Create a UserService
 - [✓] Create a UserRepository
 - [✓] Create a UserController
+- [✓] Create a BeneficioService
+- [✓] Create a BeneficioRepository
+- [✓] Create a BeneficioController
