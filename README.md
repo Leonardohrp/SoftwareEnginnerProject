@@ -10,7 +10,7 @@ Project Description
 - [ ] Create a FuncionarioController
 
 ### Completed Column ✓
-- [✓] Create a DataContext
+- [x] Create a DataContext
 - [✓] Create a UserService
 - [✓] Create a UserRepository
 - [✓] Create a UserController
