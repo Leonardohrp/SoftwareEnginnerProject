@@ -10,10 +10,10 @@ Project Description
 - [ ] Create a FuncionarioController
 
 ### Completed Column ✓
-- [✓] Create a DataContext
-- [✓] Create a UserService
-- [✓] Create a UserRepository
-- [✓] Create a UserController
-- [✓] Create a BeneficioService
-- [✓] Create a BeneficioRepository
-- [✓] Create a BeneficioController
+- [x] Create a DataContext
+- [x] Create a UserService
+- [x] Create a UserRepository
+- [x] Create a UserController
+- [x] Create a BeneficioService
+- [x] Create a BeneficioRepository
+- [x] Create a BeneficioController
