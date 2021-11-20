@@ -1,8 +1,10 @@
 ﻿using API_LES.Data;
 using API_LES.Helpers;
 using API_LES.Models;
+using API_LES.Repositorys.Beneficio;
 using API_LES.Repositorys.User;
 using API_LES.Services;
+using API_LES.Services.Beneficio;
 using API_LES.Services.User;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
@@ -60,9 +62,13 @@ namespace API_LES
             });
 
             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<IDataContext, DataContext>();
+
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<IDataContext, DataContext>();
+
+            services.AddTransient<IBeneficioService, BeneficioService>();
+            services.AddTransient<IBeneficioRepository, BeneficioRepository>();
 
             // Auto Mapper Configurations
             var mapperConfig = new MapperConfiguration(mc =>

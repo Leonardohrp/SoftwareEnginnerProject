@@ -4,6 +4,40 @@
         <name>API_LES</name>
     </assembly>
     <members>
+        <member name="T:API_LES.Controllers.BeneficioController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:API_LES.Controllers.BeneficioController.GetBenenficioById(System.Int32)">
+            <summary>
+            Traz um beneficio pelo Id.
+            </summary>
+            <param name="Código BeneficioBeneficio"></param>
+            <returns>Retorna usuário cadastrado pelo Id</returns>
+        </member>
+        <member name="M:API_LES.Controllers.BeneficioController.CreateBeneficio(API_LES.Models.Beneficio.CreateBeneficio)">
+            <summary>
+            Cria um beneficio.
+            </summary>
+            <returns>Retorna um boolean para a criação do usuário, true = sucesso || false = falha</returns>
+        </member>
+        <member name="M:API_LES.Controllers.BeneficioController.UpdateBeneficioById(API_LES.Models.Beneficio.UpdateBeneficio,System.Int32)">
+            <summary>
+            Faz o update do beneficio pelo Id.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:API_LES.Controllers.CargoController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:API_LES.Controllers.FuncionarioController">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:API_LES.Controllers.UserController">
             <summary>
             
@@ -27,6 +61,12 @@
             Faz o update do usuário pelo Id.
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:API_LES.Controllers.UserController.DeleteUserById(System.Int32)">
+            <summary>
+            Deleta um usuário pelo Id.
+            </summary>
+            <returns> </returns>
         </member>
     </members>
 </doc>

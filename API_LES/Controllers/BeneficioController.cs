@@ -1,9 +1,10 @@
-﻿using API_LES.Models.User;
-using API_LES.Services.User;
-using AutoMapper;
+﻿using API_LES.Models.Beneficio;
+using API_LES.Services.Beneficio;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace API_LES.Controllers
@@ -13,32 +14,29 @@ namespace API_LES.Controllers
     /// </summary>
     [ApiController]
     [Route("api/[controller]/[action]")]
-    public class UserController : ControllerBase
+    public class BeneficioController : ControllerBase
     {
-        private readonly IUserService _service;
-        private readonly IMapper _mapper;
-
-        public UserController(IUserService service, IMapper mapper)
+        private readonly IBeneficioService _service;
+        public BeneficioController(IBeneficioService service)
         {
             _service = service;
-            _mapper = mapper;
         }
 
         /// <summary>
-        /// Traz um usuário pelo Id.
+        /// Traz um beneficio pelo Id.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="Código Beneficio"></param>
         /// <returns>Retorna usuário cadastrado pelo Id</returns>
-        [HttpGet("id")]
+        [HttpGet("{codBeneficio}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetUserById(int id)
+        public async Task<IActionResult> GetBenenficioById(int codBeneficio)
         {
             try
             {
-                var user = await _service.GetUserById(id);
+                var beneficio = await _service.GetBeneficioById(codBeneficio);
 
-                return Ok(new { Success = true, Message = "", Body = user});
+                return Ok(new { Success = true, Message = "", Body = beneficio });
             }
             catch (Exception ex)
             {
@@ -47,68 +45,69 @@ namespace API_LES.Controllers
         }
 
         /// <summary>
-        /// Cria um usuário.
+        /// Cria um beneficio.
         /// </summary>
         /// <returns>Retorna um boolean para a criação do usuário, true = sucesso || false = falha</returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> CreateUser([FromBody] CreateUser createUser)
+        public async Task<IActionResult> CreateBeneficio([FromBody] CreateBeneficio createBeneficio)
         {
             try
             {
-                bool isUserCreated = await _service.CreateUser(createUser);
+                bool isBeneficioCreated = await _service.CreateBeneficio(createBeneficio);
 
-                return Ok(new { Success = isUserCreated, Message = "Usuário criado com sucesso." });
+                return Ok(new { Success = isBeneficioCreated, Message = "Beneficio criado com sucesso." });
             }
             catch (Exception ex)
             {
                 return BadRequest(new { Success = false, Message = ex.Message });
             }
-            
+
         }
 
         /// <summary>
-        /// Faz o update do usuário pelo Id.
+        /// Faz o update do beneficio pelo Id.
         /// </summary>
         /// <returns></returns>
         [HttpPut("id")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateUserById([FromBody] UpdateUser updateUser, int id)
+        public async Task<IActionResult> UpdateBeneficioById([FromBody] UpdateBeneficio updateBenenficio, int id)
         {
             try
             {
-                var userUpdated = await _service.UpdateUserById(updateUser, id);
+                bool beneficioUpdated = await _service.UpdateBeneficioById(updateBenenficio, id);
 
-                return Ok(new { Success = userUpdated, Message = "Usuário atualizado com sucesso." });
+                return Ok(new { Success = beneficioUpdated, Message = "Beneficio atualizado com sucesso." });
             }
             catch (Exception ex)
             {
                 return BadRequest(new { Success = false, Message = ex.Message });
             }
-            
+
         }
 
-        /// <summary>
-        /// Deleta um usuário pelo Id.
-        /// </summary>
-        /// <returns> </returns>
+        ///// <summary>
+        ///// Deleta um beneficio pelo Id.
+        ///// </summary>
+        ///// <returns> </returns>
         [HttpDelete("id")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> DeleteUserById(int id)
+        public async Task<IActionResult> DeleteBeneficioById(int id)
         {
             try
             {
-                bool isUserDeleted = await _service.DeleteUserById(id);
-      
-                return Ok(new { Success = isUserDeleted, Message = "Usuário deletado com sucesso." });
+                bool isBenenficioDeleted = await _service.DeleteBeneficioById(id);
+
+                return Ok(new { Success = isBenenficioDeleted, Message = "Beneficio deletado com sucesso." });
             }
             catch (Exception ex)
             {
                 return BadRequest(new { Success = false, Message = ex.Message });
             }
         }
+
     }
 }

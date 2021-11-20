@@ -2,8 +2,15 @@
 Project Description
 
 ### Column Name
-- [ ] Task title 
-- [ ] Sub-task or description  
+- [ ] Create a BeneficioService
+- [ ] Create a BeneficioRepository
+- [ ] Create a BeneficioController
+- [ ] Create a CargoService
+- [ ] Create a CargoRepository
+- [ ] Create a CargoController
+- [ ] Create a FuncionarioService
+- [ ] Create a FuncionarioRepository
+- [ ] Create a FuncionarioController
 
 ### Completed Column ✓
 - [✓] Create a DataContext
