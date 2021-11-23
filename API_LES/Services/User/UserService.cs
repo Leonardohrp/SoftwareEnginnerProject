@@ -39,9 +39,7 @@ namespace API_LES.Services.User
             var user = await _repo.GetUserById(id);
             
             if(user == null)
-            {
                 throw new Exception("Usuário não cadastrado.");
-            }
 
             return user;
         }

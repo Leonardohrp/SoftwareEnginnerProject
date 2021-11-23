@@ -1,5 +1,5 @@
 # LES Project
-Project Description
+Laboratório de Engenharia de Software Project
 
 ### ToDo
 - [ ] Create a CargoService

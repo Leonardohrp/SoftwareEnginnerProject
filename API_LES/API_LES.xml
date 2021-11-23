@@ -33,10 +33,65 @@
             
             </summary>
         </member>
+        <member name="M:API_LES.Controllers.CargoController.GetCargoById(System.Int32)">
+            <summary>
+            Traz um Cargo pelo Codigo Cargo.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API_LES.Controllers.CargoController.CreateCargo(API_LES.Models.Cargo.CreateCargo)">
+            <summary>
+            Cria um Cargo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API_LES.Controllers.CargoController.UpdateCargoById(API_LES.Models.Cargo.UpdateCargo,System.Int32)">
+            <summary>
+            Faz o update do Cargo pelo Codigo Cargo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API_LES.Controllers.CargoController.DeleteCargoById(System.Int32)">
+            <summary>
+            Deleta um Cargo pelo Codigo Cargo.
+            </summary>
+            <returns> </returns>
+        </member>
         <member name="T:API_LES.Controllers.FuncionarioController">
             <summary>
             
             </summary>
+        </member>
+        <member name="T:API_LES.Controllers.SetorController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:API_LES.Controllers.SetorController.GetSetorById(System.Int32)">
+            <summary>
+            Traz um Setor pelo Codigo Cargo.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API_LES.Controllers.SetorController.CreateSetor(API_LES.Models.Setor.CreateSetor)">
+            <summary>
+            Cria um Setor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API_LES.Controllers.SetorController.UpdateSetorById(API_LES.Models.Setor.UpdateSetor,System.Int32)">
+            <summary>
+            Faz o update do Setor pelo Codigo Setor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API_LES.Controllers.SetorController.DeleteSetorById(System.Int32)">
+            <summary>
+            Deleta um Setor pelo Codigo Setor.
+            </summary>
+            <returns> </returns>
         </member>
         <member name="T:API_LES.Controllers.UserController">
             <summary>

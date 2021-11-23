@@ -2,9 +2,13 @@
 using API_LES.Helpers;
 using API_LES.Models;
 using API_LES.Repositorys.Beneficio;
+using API_LES.Repositorys.Cargo;
+using API_LES.Repositorys.Setor;
 using API_LES.Repositorys.User;
 using API_LES.Services;
 using API_LES.Services.Beneficio;
+using API_LES.Services.Cargo;
+using API_LES.Services.Setor;
 using API_LES.Services.User;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
@@ -68,7 +72,13 @@ namespace API_LES
             services.AddTransient<IUserRepository, UserRepository>();
 
             services.AddTransient<IBeneficioService, BeneficioService>();
-            services.AddTransient<IBeneficioRepository, BeneficioRepository>();
+            services.AddTransient<IBeneficioRepository, BeneficioRepository>(); 
+
+            services.AddTransient<ICargoService,CargoService>();
+            services.AddTransient<ICargoRepository, CargoRepository>();
+
+            services.AddTransient<ISetorService, SetorService>();
+            services.AddTransient<ISetorRepository, SetorRepository>();
 
             // Auto Mapper Configurations
             var mapperConfig = new MapperConfiguration(mc =>
