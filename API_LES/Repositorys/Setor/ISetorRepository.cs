@@ -11,6 +11,7 @@ namespace API_LES.Repositorys.Setor
         Task<int> CreateSetor(CreateSetor createSetor);
         Task<int> DeleteSetorById(int codSetor);
         Task<Models.Setor.Setor> GetSetorById(int codSetor);
+        Task<IEnumerable<Models.Setor.Setor>> GetAllSetores();
         Task<int> UpdateSetorById(UpdateSetor updateUser, int codSetor);
     }
 }

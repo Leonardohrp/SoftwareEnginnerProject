@@ -41,6 +41,16 @@ namespace API_LES.Services.Cargo
             return cargo;
         }
 
+        public async Task<IEnumerable<Models.Cargo.Cargo>> GetAllCargos()
+        {
+            var cargos = await _repo.GetAllCargos();
+
+            if (cargos == null)
+                throw new Exception("Cargo não cadastrado.");
+
+            return cargos;
+        }
+
         public async Task<bool> UpdateCargoById(UpdateCargo updateCargo, int codCargo)
         {
             if (string.IsNullOrEmpty(codCargo.ToString()))

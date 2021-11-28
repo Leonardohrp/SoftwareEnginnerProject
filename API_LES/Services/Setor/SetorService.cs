@@ -42,6 +42,16 @@ namespace API_LES.Services.Setor
             return setor;
         }
 
+        public async Task<IEnumerable<Models.Setor.Setor>> GetAllSetores()
+        {
+            var setores = await _repo.GetAllSetores();
+
+            if (setores == null)
+                throw new Exception("Nenhum setor cadastrado.");
+
+            return setores;
+        }
+
         public async Task<bool> UpdateSetorById(UpdateSetor updateSetor, int codSetor)
         {
             if (string.IsNullOrEmpty(codSetor.ToString()))

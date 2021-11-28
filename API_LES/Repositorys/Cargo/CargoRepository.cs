@@ -4,6 +4,7 @@ using System;
 using Dapper;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace API_LES.Repositorys.Cargo
 {
@@ -101,6 +102,31 @@ namespace API_LES.Repositorys.Cargo
                     connnection.Close();
                 }
                 return cargo;
+            }
+        }
+
+        public async Task<IEnumerable<Models.Cargo.Cargo>> GetAllCargos()
+        {
+            var connectionString = _dataContext.GetConnection();
+
+            IEnumerable<Models.Cargo.Cargo> cargos = new List<Models.Cargo.Cargo>();
+            using (var connnection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connnection.Open();
+                    var query = "SELECT * FROM Cargo";
+                    cargos = await connnection.QueryAsync<Models.Cargo.Cargo>(query);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connnection.Close();
+                }
+                return cargos;
             }
         }
 

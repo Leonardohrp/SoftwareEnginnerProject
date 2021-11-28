@@ -47,6 +47,27 @@ namespace API_LES.Controllers
         }
 
         /// <summary>
+        /// Traz todos os Cargos
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet()]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAllCargos()
+        {
+            try
+            {
+                var cargos = await _service.GetAllCargos();
+
+                return Ok(new { Success = true, Message = "", Body = cargos });
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Success = false, Message = ex.Message });
+            }
+        }
+
+        /// <summary>
         /// Cria um Cargo.
         /// </summary>
         /// <returns></returns>
