@@ -46,6 +46,28 @@ namespace API_LES.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Traz todos Setores.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet()]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAllSetores()
+        {
+            try
+            {
+                var setores = await _service.GetAllSetores();
+
+                return Ok(new { Success = true, Message = "", Body = setores });
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Success = false, Message = ex.Message });
+            }
+        }
+
         /// <summary>
         /// Cria um Setor.
         /// </summary>

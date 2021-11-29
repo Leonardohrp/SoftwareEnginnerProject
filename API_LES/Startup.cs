@@ -82,6 +82,15 @@ namespace API_LES
             services.AddTransient<ISetorService, SetorService>();
             services.AddTransient<ISetorRepository, SetorRepository>();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+            });
+
             services.AddTransient<IFuncionarioService, FuncionarioService>();
             services.AddTransient<IFuncionarioRepository, FuncionarioRepository>();
 
@@ -112,7 +121,9 @@ namespace API_LES
 
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API_LES v1"));
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
+
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {

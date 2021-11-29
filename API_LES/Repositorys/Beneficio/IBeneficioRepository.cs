@@ -9,6 +9,7 @@ namespace API_LES.Repositorys.Beneficio
     public interface IBeneficioRepository
     {
         Task<Models.Beneficio.Beneficio> GetBeneficioById(int codBeneficio);
+        Task<IEnumerable<Models.Beneficio.Beneficio>> GetAllBeneficios();
         Task<int> CreateBeneficio(CreateBeneficio createBeneficio);
         Task<int> UpdateBeneficioById(UpdateBeneficio updateBeneficio, int codBeneficio);
         Task<int> DeleteBeneficioById(int codBeneficio);

@@ -7,7 +7,7 @@ namespace API_LES.Models.Cargo
 {
     public class Cargo
     {
-        public int CodBeneficio { get; set; }
+        public int CodCargo { get; set; }
         public string NomeCargo { get; set; }
         public double PisoSalarial { get; set; }
     }

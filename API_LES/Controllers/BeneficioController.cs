@@ -45,6 +45,27 @@ namespace API_LES.Controllers
         }
 
         /// <summary>
+        /// Traz todos beneficios.
+        /// </summary>
+        /// <returns>Retorna beneficios</returns>
+        [HttpGet()]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAllBeneficios()
+        {
+            try
+            {
+                var beneficio = await _service.GetAllBeneficios();
+
+                return Ok(new { Success = true, Message = "", Body = beneficio });
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Success = false, Message = ex.Message });
+            }
+        }
+
+        /// <summary>
         /// Cria um beneficio.
         /// </summary>
         /// <returns>Retorna um boolean para a criação do usuário, true = sucesso || false = falha</returns>

@@ -108,6 +108,32 @@ namespace API_LES.Repositorys.Beneficio
             }
         }
 
+
+        public async Task<IEnumerable<Models.Beneficio.Beneficio>> GetAllBeneficios()
+        {
+            var connectionString = _dataContext.GetConnection();
+
+            IEnumerable<Models.Beneficio.Beneficio> user = new List<Models.Beneficio.Beneficio>();
+            using (var connnection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connnection.Open();
+                    var query = "SELECT * FROM Beneficio";
+                    user = await connnection.QueryAsync<Models.Beneficio.Beneficio>(query);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connnection.Close();
+                }
+                return user;
+            }
+        }
+
         public async Task<int> UpdateBeneficioById(UpdateBeneficio updateBeneficio, int codBeneficio)
         {
             var connectionString = _dataContext.GetConnection();

@@ -9,6 +9,7 @@ namespace API_LES.Repositorys.Cargo
     public interface ICargoRepository
     {
         Task<Models.Cargo.Cargo> GetCargoById(int codCargo);
+        Task<IEnumerable<Models.Cargo.Cargo>> GetAllCargos();
         Task<int> CreateCargo(CreateCargo createCargo);
         Task<int> UpdateCargoById(UpdateCargo updateCargo, int codCargo);
         Task<int> DeleteCargoById(int codCargo);

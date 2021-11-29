@@ -104,6 +104,31 @@ namespace API_LES.Repositorys.Setor
                 return setor;
             }
         }
+        
+         public async Task<IEnumerable<Models.Setor.Setor>> GetAllSetores()
+        {
+            var connectionString = _dataContext.GetConnection();
+
+            IEnumerable<Models.Setor.Setor> setores = new List<Models.Setor.Setor>();
+            using (var connnection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connnection.Open();
+                    var query = "SELECT * FROM Setor";
+                    setores = await connnection.QueryAsync<Models.Setor.Setor>(query);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connnection.Close();
+                }
+                return setores;
+            }
+        }
 
         public async Task<int> UpdateSetorById(UpdateSetor updateUser, int codSetor)
         {

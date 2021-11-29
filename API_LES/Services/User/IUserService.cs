@@ -9,7 +9,7 @@ namespace API_LES.Services.User
     public interface IUserService
     {
         Task<Models.User.User> GetUserById(int id);
-
+        Task<IEnumerable<Models.User.User>> GetAllUsers();
         Task<bool> CreateUser(CreateUser createUser);
 
         Task<bool> UpdateUserById(UpdateUser updateUser, int id);

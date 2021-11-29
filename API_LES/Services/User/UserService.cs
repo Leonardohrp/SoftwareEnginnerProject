@@ -44,6 +44,15 @@ namespace API_LES.Services.User
             return user;
         }
 
+        public async Task<IEnumerable<Models.User.User>> GetAllUsers()
+        {
+            var users = await _repo.GetAllUsers();
+            
+            if(users == null)
+                throw new Exception("Nenhum usuário cadastrado.");
+
+            return users;
+        }
         public async Task<bool> UpdateUserById(UpdateUser updateUser, int id)
         {
             if (string.IsNullOrEmpty(id.ToString()))
