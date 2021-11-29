@@ -115,6 +115,31 @@ namespace API_LES.Repositorys.User
             }
         }
 
+
+        public async Task<IEnumerable<Models.User.User>> GetAllUsers()
+        {
+            var connectionString = _dataContext.GetConnection();
+
+            IEnumerable<Models.User.User> users = new List<Models.User.User>();
+            using (var connnection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connnection.Open();
+                    var query = "SELECT * FROM Users";
+                    users = await connnection.QueryAsync<Models.User.User>(query);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connnection.Close();
+                }
+                return users;
+            }
+        }
         public async Task<int> UpdateUserById(UpdateUser updateUser, int id, string login)
         {
             var connectionString = _dataContext.GetConnection();

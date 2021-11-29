@@ -10,6 +10,7 @@ namespace API_LES.Repositorys.User
     public interface IUserRepository
     {
         Task<Models.User.User> GetUserById(int id);
+        Task<IEnumerable<Models.User.User>> GetAllUsers();
         Task<int> CreateUser(CreateUser createUser, string login);
         Task<int> UpdateUserById(UpdateUser updateUser, int id, string login);
         Task<int> DeleteUserById(int id);

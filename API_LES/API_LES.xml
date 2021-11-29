@@ -16,6 +16,12 @@
             <param name="Código BeneficioBeneficio"></param>
             <returns>Retorna usuário cadastrado pelo Id</returns>
         </member>
+        <member name="M:API_LES.Controllers.BeneficioController.GetAllBeneficios">
+            <summary>
+            Traz todos beneficios.
+            </summary>
+            <returns>Retorna beneficios</returns>
+        </member>
         <member name="M:API_LES.Controllers.BeneficioController.CreateBeneficio(API_LES.Models.Beneficio.CreateBeneficio)">
             <summary>
             Cria um beneficio.
@@ -38,6 +44,12 @@
             Traz um Cargo pelo Codigo Cargo.
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API_LES.Controllers.CargoController.GetAllCargos">
+            <summary>
+            Traz todos os Cargos
+            </summary>
             <returns></returns>
         </member>
         <member name="M:API_LES.Controllers.CargoController.CreateCargo(API_LES.Models.Cargo.CreateCargo)">
@@ -75,6 +87,12 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:API_LES.Controllers.SetorController.GetAllSetores">
+            <summary>
+            Traz todos Setores.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:API_LES.Controllers.SetorController.CreateSetor(API_LES.Models.Setor.CreateSetor)">
             <summary>
             Cria um Setor.
@@ -103,6 +121,12 @@
             Traz um usuário pelo Id.
             </summary>
             <param name="id"></param>
+            <returns>Retorna usuário cadastrado pelo Id</returns>
+        </member>
+        <member name="M:API_LES.Controllers.UserController.GetAllUsers">
+            <summary>
+            Traz todos os usuários.
+            </summary>
             <returns>Retorna usuário cadastrado pelo Id</returns>
         </member>
         <member name="M:API_LES.Controllers.UserController.CreateUser(API_LES.Models.User.CreateUser)">

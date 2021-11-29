@@ -36,6 +36,18 @@ namespace API_LES.Services.Beneficio
             return true;
         }
 
+        public async Task<IEnumerable<Models.Beneficio.Beneficio>> GetAllBeneficios()
+        {
+            var beneficio = await _repo.GetAllBeneficios();
+
+            if (beneficio == null)
+            {
+                throw new Exception("Nenhum benefício cadastrado.");
+            }
+
+            return beneficio;
+        }
+
         public async Task<Models.Beneficio.Beneficio> GetBeneficioById(int codBeneficio)
         {
             var beneficio = await _repo.GetBeneficioById(codBeneficio);

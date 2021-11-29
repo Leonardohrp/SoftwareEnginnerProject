@@ -47,6 +47,27 @@ namespace API_LES.Controllers
         }
 
         /// <summary>
+        /// Traz todos os usuários.
+        /// </summary>
+        /// <returns>Retorna usuário cadastrado pelo Id</returns>
+        [HttpGet()]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            try
+            {
+                var user = await _service.GetAllUsers();
+
+                return Ok(new { Success = true, Message = "", Body = user});
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Success = false, Message = ex.Message });
+            }
+        }
+
+        /// <summary>
         /// Cria um usuário.
         /// </summary>
         /// <returns>Retorna um boolean para a criação do usuário, true = sucesso || false = falha</returns>
