@@ -3,11 +3,13 @@ using API_LES.Helpers;
 using API_LES.Models;
 using API_LES.Repositorys.Beneficio;
 using API_LES.Repositorys.Cargo;
+using API_LES.Repositorys.Funcionario;
 using API_LES.Repositorys.Setor;
 using API_LES.Repositorys.User;
 using API_LES.Services;
 using API_LES.Services.Beneficio;
 using API_LES.Services.Cargo;
+using API_LES.Services.Funcionario;
 using API_LES.Services.Setor;
 using API_LES.Services.User;
 using AutoMapper;
@@ -79,6 +81,9 @@ namespace API_LES
 
             services.AddTransient<ISetorService, SetorService>();
             services.AddTransient<ISetorRepository, SetorRepository>();
+
+            services.AddTransient<IFuncionarioService, FuncionarioService>();
+            services.AddTransient<IFuncionarioRepository, FuncionarioRepository>();
 
             // Auto Mapper Configurations
             var mapperConfig = new MapperConfiguration(mc =>

@@ -19,10 +19,4 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Funcionario\" />
-    <Folder Include="Repositorys\Funcionario\" />
-    <Folder Include="Services\Funcionario\" />
-  </ItemGroup>
-
 </Project>
